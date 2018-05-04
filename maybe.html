@@ -15,13 +15,17 @@
     <script src="https://js.arcgis.com/3.24/"></script>
     <script>
       var map;
+      var ServiceLayer;
 
-      require(["esri/map", "dojo/domReady!"], function(Map) {
+      require(["esri/map", "dojo/domReady!", "esri/layers/FeatureLayer",], function(Map,FeatureLayer) {
         map = new Map("map", {
           basemap: "topo",  //For full list of pre-defined basemaps, navigate to http://arcg.is/1JVo6Wd
           center: [-105.548353, 39.203741], // longitude, latitude
           zoom: 7
         });
+      var ServiceLayer = new FeatureLayer("https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Landscape_Trees/FeatureServer/0");
+      
+      
       });
     </script>
   </head>
